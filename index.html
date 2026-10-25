@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boulder Escape - Evaluacion T2</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="hud">
+    <div id="score">Metros: 0m</div>
+    <div id="controls">A / D o Flechas para esquivar</div>
+  </div>
+  <div id="game-over">
+    <div id="game-over-box">
+      <h1>APLASTADO!</h1>
+      <p id="final-score">Llegaste: 0m</p>
+      <p class="hint">Presiona R para reintentar</p>
+    </div>
+  </div>
+  <div id="start-screen">
+    <div id="start-box">
+      <h1>Boulder Escape</h1>
+      <p>Una roca gigante te persigue. Esquiva los obstaculos y sobrevive!</p>
+      <p class="hint">Presiona Espacio o haz clic para comenzar</p>
+    </div>
+  </div>
+  <script type="module" src="./main.js?v=2"></script>
+</body>
+</html>

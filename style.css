@@ -1,0 +1,127 @@
+﻿/* ── Reset y base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a0a00;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+canvas { display: block; }
+
+/* ── HUD (puntuacion + controles) ── */
+#hud {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#score {
+  background: rgba(0,0,0,0.55);
+  color: #FFD700;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 2px solid rgba(255,215,0,0.35);
+  letter-spacing: 1px;
+}
+
+#controls {
+  background: rgba(0,0,0,0.45);
+  color: #cccccc;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ── Pantalla Game Over ── */
+#game-over {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#game-over-box {
+  background: linear-gradient(160deg, #1a0000 0%, #3a0a00 100%);
+  border: 2px solid #cc3300;
+  border-radius: 20px;
+  padding: 48px 64px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 60px rgba(200,50,0,0.5);
+  animation: popIn 0.35s ease;
+}
+
+#game-over-box h1 {
+  font-size: 3rem;
+  color: #FF4411;
+  text-shadow: 0 0 20px rgba(255,70,0,0.8);
+  margin-bottom: 12px;
+}
+
+#game-over-box p { font-size: 1.2rem; color: #dddddd; margin: 8px 0; }
+
+/* ── Pantalla de Inicio ── */
+#start-screen {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#start-box {
+  background: linear-gradient(160deg, #0a1a00 0%, #1a3a00 100%);
+  border: 2px solid #44aa00;
+  border-radius: 20px;
+  padding: 48px 64px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 60px rgba(60,180,0,0.4);
+  max-width: 520px;
+}
+
+#start-box h1 {
+  font-size: 3rem;
+  color: #88FF22;
+  text-shadow: 0 0 20px rgba(100,220,0,0.7);
+  margin-bottom: 16px;
+}
+
+#start-box p { font-size: 1.1rem; color: #ccddbb; margin: 10px 0; line-height: 1.5; }
+
+/* ── Estilos comunes ── */
+.hint {
+  margin-top: 20px !important;
+  font-size: 0.95rem !important;
+  color: #aaaaaa !important;
+}
+
+kbd {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
